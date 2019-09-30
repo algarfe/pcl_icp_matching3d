@@ -1,0 +1,17 @@
+import bpy
+o=bpy.data.objects["Puerta Vito"]
+f=open("car_prueba.obj","w")
+f.write("mtllib car_prueba.mtl\n")
+f.write("o Puerta_Vito\n")
+for v in o.data.vertices:
+    f.write("v %f %f %f\n" %(v.co.x,v.co.y,v.co.z))
+for v in o.data.vertices:
+    f.write("vn %f %f %f\n" %(v.normal.x,v.normal.y,v.normal.z))
+for p in o.data.polygons:
+    a,b,c = p.vertices
+    a=a+1
+    b=b+1
+    c=c+1
+    f.write("f %d//%d %d//%d %d//%d\n" %(a,a,b,b,c,c))
+  
+f.close()  

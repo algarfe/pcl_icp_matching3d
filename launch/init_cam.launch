@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+
+ <!-- Include official launch file and specify camera_info urls -->
+ <include file="$(find openni_launch)/launch/openni.launch">
+   <!-- provide arguments to that launch file -->
+   <arg name="camera"
+        value="camera1" />
+   <arg name="device_id"
+	value="#1" />
+   <arg name="depth_registration"
+	value="true" />
+   <arg name="publish_tf"
+	value="false" />
+   <arg name="depth_camera_info_url"
+        value="file:///home/idf/calib/depth_A00364809477043A.yaml" />
+   <arg name="rgb_camera_info_url"
+	value="file:///home/idf/calib/rgb_A00364809477043A.yaml" />
+ </include>
+ <param name="/camera1/driver/z_scaling" type="double" value="0.99" />
+
+ <include file="$(find openni_launch)/launch/openni.launch">
+   <!-- provide arguments to that launch file -->
+   <arg name="camera"
+        value="camera2" />
+   <arg name="device_id"
+	value="#2" />
+   <arg name="depth_registration"
+	value="true" />
+   <arg name="publish_tf"
+	value="false" />
+   <arg name="depth_camera_info_url"
+	value="file:///home/idf/calib/depth_A00364809337043A.yaml" />
+   <arg name="rgb_camera_info_url"
+	value="file:///home/idf/calib/rgb_A00364809337043A.yaml" />
+ </include>
+ <param name="/camera2/driver/z_scaling" type="double" value="0.995" />
+
+ <include file="$(find openni_launch)/launch/openni.launch">
+   <!-- provide arguments to that launch file -->
+   <arg name="camera"
+        value="camera3" />
+   <arg name="device_id"
+	value="#3" />
+   <arg name="depth_registration"
+	value="true" />
+   <arg name="publish_tf"
+	value="false" />
+   <arg name="depth_camera_info_url"
+	value="file:///home/idf/calib/depth_A00364810094043A.yaml" />
+   <arg name="rgb_camera_info_url"
+	value="file:///home/idf/calib/rgb_A00364810094043A.yaml" />
+ </include>
+ <param name="/camera3/driver/z_scaling" type="double" value="0.97" />
+
+</launch>
